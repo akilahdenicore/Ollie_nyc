@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,10 +14,16 @@ function App() {
 }, []);
 
   return (
-    <div className="App">
-      <h1>Page Count: {count}</h1>
+    <div className='App'>
+    {/* <Routes> 
+      <Route path="testing"/> */}
+      <h1>Test Route</h1>
+      {/* <Route exact path="/"/> */}
+      {/* <h1>Page Count: {count}</h1> */}
+    {/* </Routes> */}
     </div>
-  );
+  )
+
 }
 
 export default App;
