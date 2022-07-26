@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :address
       t.integer :phone_number
+      t.boolean :is_admin
 
       t.timestamps
     end
