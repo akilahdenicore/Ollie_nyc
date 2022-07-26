@@ -1,0 +1,4 @@
+class MenuItem < ApplicationRecord
+
+   
+end

@@ -1,26 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+
+
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import MenuContainer from './MenuContainer';
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    fetch("/hello")
-    .then((r) => r.json())
-    .then ((data) => setCount(data.count));
-}, []);
 
   return (
     <div className='App'>
-    {/* <Routes> 
-      <Route path="testing"/> */}
-      <h1>Test Route</h1>
-      {/* <Route exact path="/"/> */}
-      {/* <h1>Page Count: {count}</h1> */}
-    {/* </Routes> */}
+      <MenuContainer />
     </div>
   )
 
