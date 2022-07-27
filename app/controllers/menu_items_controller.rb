@@ -36,7 +36,8 @@ class MenuItemsController < ApplicationController
     end
 
     def update_menu_item_params 
-        params.permit(:item_name, :description, :price, :date_available, :is_availble, :quantity)
+        # params.permit(:item_name, :description, :price, :date_available, :is_availble, :quantity)
+        params.permit(:image_url)
     end
 
     
