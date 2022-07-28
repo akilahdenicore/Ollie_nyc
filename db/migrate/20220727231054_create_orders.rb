@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :address
       t.string :order_status
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

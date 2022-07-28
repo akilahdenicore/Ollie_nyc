@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get '/line_items/:id', to: "line_items#show", as: "line_item"
+  get '/line_items/:id', to: "line_items#show"
   post '/line_items', to: "line_items#create"
   delete '/line_items/:id', to: "line_items#destroy"
-  post '/line_items/:id/add', to: "line_items#add_quantity", as: "line_item_add"
-  post '/line_items/:id/reduce', to: "line_items#reduce_quantity", as: "line_item_reduce"
+
+  post '/line_items/:id/add', to: "line_items#add_quantity"
+  post '/line_items/:id/reduce', to: "line_items#reduce_quantity"
 
   
 

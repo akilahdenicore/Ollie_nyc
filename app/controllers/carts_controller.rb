@@ -1,12 +1,12 @@
 class CartsController < ApplicationController
     def show
-        @cart = @current_cart
+        render json: = @current_cart
     end
 
     def destroy
         @cart = @current_cart
         @cart.destroy
         sesssion[:cart_id] = nil
-        redirect_to root_path
+        render json: = @current_cart
     end
 end
