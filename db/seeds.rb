@@ -22,8 +22,8 @@ MenuItem.create(item_name: "URCA'S HOT SAUCE", description: "Hot sauce blended w
 MenuItem.create(item_name: "ALMOND FAROFA", description: " Yucca flour toasted with butter, onion, garlic, parsley and roasted almonds. Great for adding crunch and flavor to many meals. We like it best with stews, steaks, salads, and of course at a BBQ. Available in 9 oz. bags.", price: 15, image_url: "/menu_photos/farofa-1.jpeg")
 
 
-User.create(username: "admin", password: "admin0", password_confirmation: "admin0", email: "admin@email.com",  address: "123 Urca Way", phone_number: "888-888-8888", is_admin: true)
-User.create(username: "mimi", password: "mimi0", password_confirmation: "mimi0", email: "mimi@email.com", address: "234 Catnip Ave", phone_number: "999-999-9999", is_admin: false)
+User.create(name: "akilah", username: "admin", password: "admin0", password_confirmation: "admin0", email: "admin@email.com",  address: "123 Urca Way", phone_number: "888-888-8888", is_admin: true)
+User.create(name: "mimi", username: "mimi", password: "mimi0", password_confirmation: "mimi0", email: "mimi@email.com", address: "234 Catnip Ave", phone_number: "999-999-9999", is_admin: false)
 
 
 

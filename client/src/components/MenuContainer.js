@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import MenuItemCard from './MenuItemCard';
 
-function MenuContainer() {
+function MenuContainer( ) {
     const [menuItems, setMenuItems] = useState([])
+    
 
     const getMenuItems = () => {
         fetch("/menu_items")
@@ -17,7 +18,8 @@ function MenuContainer() {
         getMenuItems();
       }, []);
 
-      console.log("from line 19", menuItems)
+      console.log(menuItems)
+
 
   return (
     <div>

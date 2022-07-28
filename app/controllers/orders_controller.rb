@@ -1,35 +1,41 @@
 class OrdersController < ApplicationController
 
-    def index
-      @orders = Order.all
-      render json: @orders
-    end
+    # Implementing the below line of code when looking at data in Postman
+    # skip_before_action :authorize
     
-    def show
-      @order = Order.find(params[:id])
-      render json: @order
+    def index 
+        render json: Order.all
     end
 
-    def create
-      @order = Order.new(order_params)
-      @current_cart.line_items.each do |item|
-        @order.line_items << item
-        item.cart_id = nil
-       end
-       @order.save
-       Cart.destroy(session[:cart_id])
-       session[:cart_id] = nil
-       render json: @order, :status :created
-     end
-    
+    def show 
+        order = Order.find(params[:id])
+        render json: order
+    end 
 
-
-
-      
-private
-    def order_params
-        params.require(:order).permit(:name, :email, :address, :order_status, :user_id)
-        # is require necessary?
+    def create 
+        order = Order.create!(menu_item_params)
+        render json: order, status: :created
     end
 
+    def destroy 
+        order = Order.find(params[:id])
+        order.destroy
+        render json: {}
+    end
+
+    def update
+        order = Order.find(params[:id])
+        order.update!(update_order_params)
+        render json: order, status: :ok
+    end
+
+    private 
+
+    def order_params 
+        params.permit(:order_status, :total, :user_id, :cart_id )
+    end
+
+    def update_order_params 
+        params.permit(:order_status, :total, :user_id, :cart_id)
+    end
 end

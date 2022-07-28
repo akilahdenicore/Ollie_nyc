@@ -1,31 +1,20 @@
 Rails.application.routes.draw do
-  resources :menu_items
-  resources :carts
-  resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :users, only: [:create, :show]
+  resources :orders
+  resources :menu_items
+  resources :carts
+
   post "/signup", to: "users#create"
-  get "/me", to: "users#show"
   post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-
-  get '/line_items/:id', to: "line_items#show"
-  post '/line_items', to: "line_items#create"
-  delete '/line_items/:id', to: "line_items#destroy"
-
-  post '/line_items/:id/add', to: "line_items#add_quantity"
-  post '/line_items/:id/reduce', to: "line_items#reduce_quantity"
-
   
-
-
-
+  get "/me", to: "users#show"
+  delete "logout", to: "sessions#destroy"
 
   get '*path',
-  to: 'fallback#index', 
-  constraints: ->(req) { !req.xhr? && req.format.html? }
-
-
+      to: 'fallback#index',
+      constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end
