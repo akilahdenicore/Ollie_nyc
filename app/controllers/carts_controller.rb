@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
-    
+     
     # Implementing the below line of code when looking at data in Postman
-    # skip_before_action :authorize
+    skip_before_action :authorize
     
     def index 
         render json: Cart.all
@@ -9,11 +9,11 @@ class CartsController < ApplicationController
 
     def show 
         cart = Cart.find(params[:id])
-        render json: cart
+        render json: cart, include: ['cart_items', 'cart_items.menu_item']
     end 
 
     def create 
-        cart = Cart.create!
+        cart = Cart.create!(cart_params)
         render json: cart, status: :created
     end
 
@@ -32,10 +32,7 @@ class CartsController < ApplicationController
     private 
 
     def cart_params 
-        params.permit(:quantity, :menu_item_id, :user_id) 
+        params.permit(:user_id) 
     end
 
-    def update_cart_params 
-        params.permit(:quantity, :menu_item_id, :user_id)
-    end
 end
