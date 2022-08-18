@@ -87,7 +87,7 @@ const SignUpForm = ( {onLogin} ) => {
           value={password_confirmation}
           onChange={(e) => setPassword_Confirmation(e.target.value)}
         />
-         <input
+         {/* <input
           placeholder="Your address"
           type="text"
           id="address"
@@ -100,7 +100,7 @@ const SignUpForm = ( {onLogin} ) => {
           id="phone_number"
           value={phone_number}
           onChange={(e) => setPhoneNumber(e.target.value)}
-        />
+        /> */}
 
         <button id="signup-btn" type="submit">
           {isLoading ? "Loading..." : "Sign Up"}

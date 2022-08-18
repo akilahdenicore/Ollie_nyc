@@ -10,7 +10,8 @@ const LoginPage = ( {onLogin} ) => {
     <div>
         {showLogin ? (
         <div>
-          <h1>Welcome Back!</h1>
+          <h1>Welcome to Ollie !</h1>
+          <p>Login below</p>
           <LoginForm onLogin={onLogin} />
           <p>Don't have an Account?</p>
           <button onClick={() => setShowLogin(false)}>
