@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-function ProductCard({product}) {
-  const {product, description} = product
+function ProductCard({productName}) {
+  const {product, description, price} = product
 
   return (
    <li className="product-card">

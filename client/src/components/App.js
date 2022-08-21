@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ProductContainer from './ProductContainer';
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
-import Header from "./Header";
+
 
 
  function App() {
