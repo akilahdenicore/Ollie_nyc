@@ -1,60 +1,61 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import MenuContainer from './MenuContainer';
+import ProductContainer from './ProductContainer';
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 
 
-function App() {
-  const [user, setUser] = useState(null);
+ function App() {
+    
+    const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    //auto-login
-    fetchUser();
-  }, []);
 
-  function fetchUser() {
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
+    useEffect(() => {
+      //auto-login
+      fetchUser();
+    }, []);
+  
+    function fetchUser() {
+      fetch("/me").then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      });
+    }
+  
+  
+    if (!user) return <LoginPage onLogin={setUser} />;
+  
+  
+    return (
+      <div className='App'>
+        <NavBar onLogin={setUser}/>
+        <Routes>
+          <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/>
+          <Route path="/menu" element={<ProductContainer/>}/>
+        </Routes>
+      </div>
+    )
+  
   }
-
-
-
-
-  if (!user) return <LoginPage onLogin={setUser} />;
-
-
-  return (
-    <div className='App'>
-      <NavBar onLogin={setUser}/>
-      <Routes>
-        <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/>
-        <Route path="/menu" element={<MenuContainer/>}/>
-      </Routes>
-    </div>
-  )
-
-}
-
-export default App;
+  
+  export default App;
+    
+  
+  
+  
+  
+  
+  
+  
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function App(){
+//   const [products, setProducts] = useState(null);
+//   useEffect(() => {
+//     fetchProducts();
+//   }, []);
+// }
 
 
 // function App() {

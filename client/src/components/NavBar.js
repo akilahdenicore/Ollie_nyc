@@ -18,10 +18,10 @@ const NavBar = ({onLogin}) => {
   return (
     <div>
         <div>
-            <Link to="/menu">
+            <Link to="/products">
             <p>Menu</p>
             </Link>
-        <button onClick={handleLogout}>Logout</button>
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   )
