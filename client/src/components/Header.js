@@ -1,10 +1,10 @@
 import React from 'react'
-import image from './images/ollie-logo.png'
+import OllieLogo from '../images/OllieLogo.png'
 
 function Header() {
   return (
     <div>
-        <img className="logo" src={image} height={100} width />
+        <img className="logo" src={OllieLogo} height={100} width />
     </div>
   )
 }
