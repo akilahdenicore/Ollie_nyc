@@ -1,21 +1,94 @@
 import React, { useState, useEffect } from 'react'
+
+
+
 import ProductCard from './ProductCard';
 
-function ProductContainer({products}) {
-  const productCard = products.map((product) => (
-    <ProductCard
-      key={product.id}
-      product
-      />
-  ))
+function ProductContainer( ) {
+    const [products, setProducts] = useState([])
+    
+
+    const getProducts = () => {
+        fetch("/products")
+          .then((response) => response.json())
+          .then((response) => {
+            setProducts(response);
+          })
+          .catch((error) => console.log(error));
+      };
+
+      useEffect(() => {
+        getProducts();
+      }, []);
+
+      console.log(products)
+
 
   return (
-    <ul className="cards">
-      {productCard}
-    </ul>
+    <div>
+      {products.map((product) => {
+        return <ProductCard key={product.id} product={product} />;
+      })}
+
+    </div>
   )
 }
+
+export default ProductContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import ProductCard from './ProductCard';
+
+// function ProductContainer({products}) {
+//   const productCard = products.map((product) => (
+//     <ProductCard
+//       key={product.id}
+//       product
+//       />
+//   ))
+
+//   return (
+//     <ul className="cards">
+//       {productCard}
+//     </ul>
+//   )
+// }
   
+
+
+// export default ProductContainer
 
 //   const getProducts = () => {
 //       fetch("/products")
@@ -40,7 +113,7 @@ function ProductContainer({products}) {
 // )
 
 
-export default ProductContainer
+
 // import MenuItemCard from './MenuItemCard';
 
 // function MenuContainer( ) {
