@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from "react-router-dom"
 
 function ProductCard({product}) {
   // const {product, description, price} = product
@@ -8,6 +9,9 @@ function ProductCard({product}) {
         <h3>{product.product}</h3>
         <p className="description">{product.description}</p>
         <p>${product.price}</p>
+        <Link to={`/menu/${product.id}`}>
+          <button>Reviews</button>
+        </Link>
     </div>
   )
 }

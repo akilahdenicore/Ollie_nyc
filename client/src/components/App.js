@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 import LandingPage from "./LandingPage";
+import ProductPage from "./ProductPage";
 
 
 
@@ -16,7 +17,7 @@ import LandingPage from "./LandingPage";
 
     useEffect(() => {
       //auto-login
-      fetchUser();
+      // fetchUser();
       fetchProducts();
     }, []);
   
@@ -37,7 +38,7 @@ import LandingPage from "./LandingPage";
 
   
     // if (!user) return <LoginPage onLogin={setUser} />;
-    if (!user) return <LandingPage products={products} onLogin={setUser} />;
+    // if (!user) return <LandingPage products={products} onLogin={setUser} />;
 
 
     //LOGIC- if logged in, signup and login doesn't display
@@ -47,7 +48,9 @@ import LandingPage from "./LandingPage";
       <div className='App'>
         <NavBar onLogin={setUser}/>
         <Routes>
-          <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/>
+          {/* <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/> */}
+          <Route exact path="/" element={<LandingPage products={products} onLogin={setUser}/>}/>
+          <Route path="/menu/:id" element={<ProductPage/>}/>
         </Routes>
       </div>
     )

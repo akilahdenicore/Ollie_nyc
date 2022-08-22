@@ -2,7 +2,8 @@ class ReviewsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :review_not_found 
 rescue_from ActiveRecord::RecordInactive, with: :review_request_invalid
     
-    before_action :authorize 
+    # Implementing the below line of code when looking at data in Postman
+    # skip_before_action :authorize
 
     def index 
         reviews = Review.all 
