@@ -7,15 +7,17 @@ import LandingPage from "./LandingPage";
 
 
 
- function App({products}) { 
+ function App() { 
     
     const [user, setUser] = useState(null);
+    const [products, setProducts] = useState([]);
   
 
 
     useEffect(() => {
       //auto-login
       fetchUser();
+      fetchProducts();
     }, []);
   
     function fetchUser() {
@@ -25,6 +27,13 @@ import LandingPage from "./LandingPage";
         }
       });
     }
+
+    function fetchProducts() {
+      fetch("/menu").then((r) => {
+        if (r.ok) {
+          r.json().then((products) => setProducts(products));
+        }
+    });}
 
   
     // if (!user) return <LoginPage onLogin={setUser} />;

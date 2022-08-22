@@ -1,7 +1,11 @@
 import React from 'react'
 import ProductCard from './ProductCard';
 
-function LandingPage({products}) {
+function LandingPage( {products} ) {
+
+ console.log(products)
+
+
 
 
   return (
