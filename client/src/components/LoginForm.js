@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom"
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
-const LoginForm = ({onLogin}) => {
+const LoginForm = ({onLogin, setShowLogin}) => { //any function or variable that is inherited from a parent must be noted here **
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -23,7 +23,8 @@ const LoginForm = ({onLogin}) => {
           if (r.ok) {
             r.json().then((user) => {
               onLogin(user);
-              navigate("/menu");
+              setShowLogin(false);
+              navigate("/"); //nav back to homepage
               console.log(user)
             });
           } else {
@@ -35,6 +36,8 @@ const LoginForm = ({onLogin}) => {
 
   return (
     <div>
+      <h1>Welcome to Ollie !</h1>
+        <p>Login below to leave us a review!</p>
         <form onSubmit={handleSubmit}>
         <input
           placeholder="Enter username"
@@ -59,8 +62,12 @@ const LoginForm = ({onLogin}) => {
           ))}
         </div>
       </form>
+      <p>Don&apos;t have an Account?</p>
+            <button onClick={() => setShowSignUp(true)}>
+              Sign up here!
+            </button>
     </div>
   )
 }
 
-export default LoginForm
+export default LoginForm;

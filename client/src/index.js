@@ -2,14 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom"
 import './index.css';
-import App from './components/App';
+import Ollie from './components/Ollie';
 import reportWebVitals from './reportWebVitals';
+
+
+// const [products, setProducts] = useState(null);
+
+// useEffect(() => {
+//    fetchProducts();
+// }, []);
+
+//  function fetchProducts() {
+//       fetch("/products").then((r) => {
+//         if (r.ok) {
+//           r.json().then((products) => setProducts(products));
+//         }
+//     });}
+  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-     <App />
+     <Ollie />
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import ProductContainer from './ProductContainer';
 import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
+import LandingPage from "./LandingPage";
 
 
 
- function App() {
+
+ function App({products}) { 
     
     const [user, setUser] = useState(null);
+  
 
 
     useEffect(() => {
@@ -23,17 +25,20 @@ import NavBar from "./NavBar";
         }
       });
     }
+
   
-  
-    if (!user) return <LoginPage onLogin={setUser} />;
-  
+    // if (!user) return <LoginPage onLogin={setUser} />;
+    if (!user) return <LandingPage products={products} onLogin={setUser} />;
+
+
+    //LOGIC- if logged in, signup and login doesn't display
+  console.log(products)
   
     return (
       <div className='App'>
         <NavBar onLogin={setUser}/>
         <Routes>
           <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/>
-          <Route path="/menu" element={<ProductContainer/>}/>
         </Routes>
       </div>
     )

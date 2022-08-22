@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 
-function ProductCard({productName}) {
-  const {product, description, price} = product
+function ProductCard({product}) {
+  // const {product, description, price} = product
 
   return (
-   <li className="product-card">
-    <div>
-        <h3>{product}</h3>
-        <p className="description">{description}</p>
-        <p>${product.price.toLocaleString()}</p>
-        </div>
-    </li>
+    <div className='product-card'>
+        <h3>{product.product}</h3>
+        <p className="description">{product.description}</p>
+        <p>${product.price}</p>
+    </div>
   )
 }
 

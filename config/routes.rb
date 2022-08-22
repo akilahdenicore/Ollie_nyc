@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, only: [:create, :show]
   # resources :orders
-  resources :products, only [:index]
+  resources :products
   # resources :carts
   # resources :cart_items
 
   post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
+  get "/menu", to: "products#index"
+  
   
   get "/me", to: "users#show"
   delete "logout", to: "sessions#destroy"
