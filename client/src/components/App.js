@@ -6,6 +6,7 @@ import LandingPage from "./LandingPage";
 import ProductPage from "./ProductPage";
 import Menu from "./Menu";
 import Footer from "./Footer";
+import "../App.css"
 
 
 

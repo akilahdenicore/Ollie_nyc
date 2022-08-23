@@ -2,30 +2,56 @@
     font-family: 'Aboreto', cursive;
     
 }
-
-.middle-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid red;
-    padding: 20px; 
-}
-
 .about-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: justify;
     padding: 50px;
-    
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
+    opacity: 0.75;
+    background-color: white;
+}
+
+.about-heading {
+    font-weight: bold;
+    font-family: 'Josefin Slab', serif;
+    font-size: 30px;
+    text-decoration-line: underline;
+    text-decoration-style: double;
+    opacity: 0.80;
+}
+
+.middle-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid green;
+    padding: 20px; 
+    font-family: 'Aboreto', cursive;
 }
 
 .contact-section {
     width: 400px;
-    height: 300px;
+    height: 250px;
     margin: 0;
     border: 2px solid black;
     padding: 5px;
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+    opacity: 0.75;
+}
 
+.hero-section {
+    width: 100%;
+}
+
+.hero-section h1 {
+    text-align: center;
 }

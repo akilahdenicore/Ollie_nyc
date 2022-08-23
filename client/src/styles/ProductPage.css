@@ -1,0 +1,73 @@
+h1 {
+    font-family: 'Aboreto', cursive;
+    font-size: 20px; 
+    text-decoration: underline;
+}
+p {
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+    font-style: italic;
+
+}
+ h4 {
+    font-family: 'Aboreto', cursive;
+ }
+
+ 
+
+ .add-review-button  {
+    background-color: #413e3a;
+    border: 2px solid #b09f96;
+    border-radius: 20px;
+    box-shadow: #372017 4px 4px 0 0;
+    color: #dcd8d3;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Josefin Slab', serif;
+    padding: 0 15px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .add-review-button:hover {
+    background-color: #fff;
+  }
+  .add-review-button :active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+
+
+  
+
+  .delete-review  {
+    background-color: #413e3a;
+    border: 2px solid #b09f96;
+    border-radius: 20px;
+    box-shadow: #372017 4px 4px 0 0;
+    color: #dcd8d3;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: 'Josefin Slab', serif;
+    padding: 0 15px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .delete-review:hover {
+    background-color: rgb(117, 64, 64);
+  }
+  .delete-review:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }

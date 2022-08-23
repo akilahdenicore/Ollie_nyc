@@ -28,6 +28,7 @@ function AddReviewForm({user, product, getProduct}) {
         r.json();
       }
       getProduct();
+      closeModalHandler();
     });
   }
 

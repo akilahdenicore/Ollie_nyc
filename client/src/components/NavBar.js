@@ -35,10 +35,11 @@ const NavBar = ({onLogin, user}) => {
         <Link to="/menu">
           <p>Menu</p>
           </Link>
-          <a href="https://resy.com/cities/ny/ollie?date=2022-08-22&seats=2" target="_blank" rel="noopener noreferrer">Resy</a>
+          <a href="https://resy.com/cities/ny/ollie" target="_blank" rel="noopener noreferrer">Resy</a>
           <Link to="/#contact"><p>Contact</p> 
           </Link>
-        <button className="logout-button" onClick={openModalHandler}>Login</button>
+        <button className="glow-on-hover" onClick={openModalHandler}>Login
+        </button>
         </div>
       </div>
         )
@@ -56,9 +57,10 @@ const NavBar = ({onLogin, user}) => {
         <Link to="/menu">
           <p>Menu</p>
           </Link>
-          <a href="https://resy.com/cities/ny/ollie?date=2022-08-22&seats=2" target="_blank" rel="noopener noreferrer">Resy</a>
+          <a href="https://resy.com/cities/ny/ollie" target="_blank" rel="noopener noreferrer">Resy</a>
           
-        <button className="logout-button" onClick={handleLogout}>Logout</button>
+        <button className="glow-on-hover" onClick={handleLogout}>Logout
+  </button>
         </div>
       </div>
       )

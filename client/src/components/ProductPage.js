@@ -4,6 +4,7 @@ import ReviewCard from './ReviewCard';
 import AddReviewForm from './AddReviewForm';
 import ProductLoggedIn from './ProductLoggedIn';
 import ProductLoggedOut from './ProductLoggedOut';
+import "../styles/ProductPage.css"
 
 function ProductPage({user, isLoggedIn}) {
     const [product, setProduct] = useState({ reviews: []})

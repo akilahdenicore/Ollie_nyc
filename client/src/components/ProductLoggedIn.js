@@ -15,7 +15,7 @@ function ProductLoggedIn({user, product, getProduct}) {
         <p>${product.price}</p>
         <AddReviewForm user={user} product={product} getProduct={getProduct}/>
         <h4>Reviews</h4>
-        <button onClick={openModalHandler}>Add a Review</button>
+        <button className="add-review-button" onClick={openModalHandler}>Add a Review</button>
         {product.reviews.map((review) =>{
           return (
               <div>

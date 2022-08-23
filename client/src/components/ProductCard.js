@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
+import "../styles/ProductCard.css"
 
 function ProductCard({product}) {
   // const {product, description, price} = product
@@ -10,7 +11,7 @@ function ProductCard({product}) {
         <p className="description">{product.description}</p>
         <p>${product.price}</p>
         <Link to={`/menu/${product.id}`}>
-          <button>Reviews</button>
+          <button className="review-button">Reviews</button>
         </Link>
     </div>
   )
