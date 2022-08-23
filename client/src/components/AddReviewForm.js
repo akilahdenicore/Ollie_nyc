@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "../styles/addReviewForm.css"
 
 function AddReviewForm({user, product, getProduct}) {
     const [rating, setRating] = useState("");
@@ -30,11 +31,15 @@ function AddReviewForm({user, product, getProduct}) {
     });
   }
 
+  const closeModalHandler = () => {
+    document.querySelector(".review-modal").style.display = "none";
+  };
+
 
 
 
   return (
-    <div >
+    <div className="review-modal">
     <h2 class="add-review">Add a Review</h2>
        <form class="menu-form"onSubmit={handleSubmit}>
           <input
@@ -51,6 +56,7 @@ function AddReviewForm({user, product, getProduct}) {
           />
         <button type="submit">Submit Your Review</button>
         </form>
+        <button onClick={closeModalHandler}>Close</button>
     </div>
   );
 }

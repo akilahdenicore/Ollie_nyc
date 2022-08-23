@@ -4,6 +4,8 @@ import LoginPage from "./LoginPage";
 import NavBar from "./NavBar";
 import LandingPage from "./LandingPage";
 import ProductPage from "./ProductPage";
+import Menu from "./Menu";
+import Footer from "./Footer";
 
 
 
@@ -12,8 +14,7 @@ import ProductPage from "./ProductPage";
     
     const [user, setUser] = useState(null);
     const [products, setProducts] = useState([]);
-  
-
+    let isLoggedIn = false;
 
     useEffect(() => {
       //auto-login
@@ -26,6 +27,7 @@ import ProductPage from "./ProductPage";
         if (r.ok) {
           r.json().then((user) => setUser(user));
         }
+        let isLoggedIn = true;
       });
     }
 
@@ -46,13 +48,15 @@ import ProductPage from "./ProductPage";
   
     return (
       <div className='App'>
-        <NavBar onLogin={setUser}/>
+        <NavBar onLogin={setUser} user={user}/>
+        <LoginPage onLogin={setUser} fetchUser={fetchUser} isLoggedIn={isLoggedIn}/>
         <Routes>
           {/* <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/> */}
           <Route exact path="/" element={<LandingPage products={products} onLogin={setUser} user={user}/>}/>
-          <Route path="/menu/:id" element={<ProductPage user={user}/>}/>
-          <Route path="/login" element={<LoginPage onLogin={setUser} fetchUser={fetchUser}/>}/>
+          <Route path="/menu/:id" element={<ProductPage user={user} isLoggedIn={isLoggedIn} />}/>
+          <Route path="/menu" element={<Menu products={products}/>}/>
         </Routes>
+        <Footer/>
       </div>
     )
   

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const LoginForm = ({onLogin}) => { //any function or variable that is inherited from a parent must be noted here **
+const LoginForm = ({onLogin, closeModalHandler}) => { //any function or variable that is inherited from a parent must be noted here **
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -25,8 +25,8 @@ const LoginForm = ({onLogin}) => { //any function or variable that is inherited 
           if (r.ok) {
             r.json().then((user) => {
               onLogin(user);
-              navigate("/"); //nav back to homepage
               console.log(user)
+              closeModalHandler();
             });
           } else {
             r.json().then((err) => setErrors(err.errors));
@@ -37,7 +37,6 @@ const LoginForm = ({onLogin}) => { //any function or variable that is inherited 
 
   return (
     <div>
-      <h1>Welcome to Ollie !</h1>
         <p>Login below to leave us a review!</p>
         <form onSubmit={handleSubmit}>
         <input
@@ -64,9 +63,6 @@ const LoginForm = ({onLogin}) => { //any function or variable that is inherited 
         </div>
       </form>
       <p>Don&apos;t have an Account?</p>
-            {/* <button onClick={() => setShowSignUp(true)}>
-              Sign up here!
-            </button> */}
     </div>
   )
 }

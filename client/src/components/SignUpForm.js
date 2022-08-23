@@ -48,6 +48,7 @@ const SignUpForm = ( {onLogin} ) => {
 
   return (
     <div>
+       <p>Create an account to leave us a review!</p>
         <form onSubmit={handleSignup}>
         <input
           placeholder="Your name"
@@ -111,7 +112,7 @@ const SignUpForm = ( {onLogin} ) => {
           ))}
         </div>
       </form>
-        
+      <p>Already have an Account?</p>
     </div>
   )
 }

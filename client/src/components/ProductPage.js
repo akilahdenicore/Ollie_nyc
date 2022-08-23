@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import ReviewCard from './ReviewCard';
 import AddReviewForm from './AddReviewForm';
+import ProductLoggedIn from './ProductLoggedIn';
+import ProductLoggedOut from './ProductLoggedOut';
 
-function ProductPage({user}) {
+function ProductPage({user, isLoggedIn}) {
     const [product, setProduct] = useState({ reviews: []})
     const { id } = useParams();
 
@@ -16,31 +18,22 @@ function ProductPage({user}) {
           .catch((error) => console.log(error));
       };
 
+      // function which has logic to display div with AddReviewForm
+      // Needs to check if user is logged in to display the component
+      // Renders without it otherwise
+
+
+
     useEffect(() => {
      getProduct();
     }, []);
 
     console.log(product)
 
-  return (
-    <div>
-        <div>
-        <h1>{product.product}</h1>
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-        </div>
-        <AddReviewForm product={product} user={user} getProduct={getProduct}/>
-        <div>
-            {product.reviews.map((review) =>{
-                return (
-                    <div>
-                        <ReviewCard key={review.id} review={review} getProduct={getProduct}/>
-                    </div>
-                );
-                })}
-        </div>
-    </div>
-  )
+    if (!user) {
+      return <ProductLoggedOut user={user} product={product} getProduct={getProduct}/>
+    }
+    return <ProductLoggedIn user={user} product={product} getProduct={getProduct}/>
 }
 
 
