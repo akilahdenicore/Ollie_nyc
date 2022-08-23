@@ -17,7 +17,7 @@ import ProductPage from "./ProductPage";
 
     useEffect(() => {
       //auto-login
-      // fetchUser();
+      fetchUser();
       fetchProducts();
     }, []);
   
@@ -42,15 +42,16 @@ import ProductPage from "./ProductPage";
 
 
     //LOGIC- if logged in, signup and login doesn't display
-  console.log(products)
+  console.log("this is from app.js", user)
   
     return (
       <div className='App'>
         <NavBar onLogin={setUser}/>
         <Routes>
           {/* <Route exact path="/" element={<LoginPage onLogin={setUser}/>}/> */}
-          <Route exact path="/" element={<LandingPage products={products} onLogin={setUser}/>}/>
-          <Route path="/menu/:id" element={<ProductPage/>}/>
+          <Route exact path="/" element={<LandingPage products={products} onLogin={setUser} user={user}/>}/>
+          <Route path="/menu/:id" element={<ProductPage user={user}/>}/>
+          <Route path="/login" element={<LoginPage onLogin={setUser} fetchUser={fetchUser}/>}/>
         </Routes>
       </div>
     )

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
    rescue_from ActiveRecord::RecordInvalid, with: :invalid 
 
  #Make sure user is logged in before doing any other actions
- #before_action :authorize 
+ before_action :authorize 
 
  private 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard';
 
-function LandingPage( {products} ) {
+function LandingPage( {products, user} ) {
 
  console.log(products)
 
@@ -13,15 +13,15 @@ function LandingPage( {products} ) {
     
     <div>
         <div>
-        <h1>Ollie</h1>
+        
         <button className="learn-more">Learn More</button>
         {/* will navigate to menu */}
         </div>
         {/* <ProductContainer products={products}/> */}
         <div>
-          <h2>This is the Menu!</h2>
+          <h2>Menu</h2>
         {products.map((product) => {
-            return <ProductCard key={product.id} product={product} />;
+            return <ProductCard key={product.id} product={product} user={user}/>;
           })}
         </div>
     </div>

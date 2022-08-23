@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const LoginForm = ({onLogin, setShowLogin}) => { //any function or variable that is inherited from a parent must be noted here **
+const LoginForm = ({onLogin}) => { //any function or variable that is inherited from a parent must be noted here **
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     let navigate = useNavigate();
 
+
+    
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
@@ -23,7 +25,6 @@ const LoginForm = ({onLogin, setShowLogin}) => { //any function or variable that
           if (r.ok) {
             r.json().then((user) => {
               onLogin(user);
-              setShowLogin(false);
               navigate("/"); //nav back to homepage
               console.log(user)
             });
@@ -63,9 +64,9 @@ const LoginForm = ({onLogin, setShowLogin}) => { //any function or variable that
         </div>
       </form>
       <p>Don&apos;t have an Account?</p>
-            <button onClick={() => setShowSignUp(true)}>
+            {/* <button onClick={() => setShowSignUp(true)}>
               Sign up here!
-            </button>
+            </button> */}
     </div>
   )
 }
