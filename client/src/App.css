@@ -1,5 +1,20 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 35px;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .App-logo {

@@ -19,9 +19,9 @@ function ReviewCard({review, getProduct}) {
          <p>
             Rating: {review.rating} Stars
         </p>
-        <h3>
+        <p>
             "{review.product_review}"
-        </h3>
+        </p>
         <button className="delete-review" onClick={handleDelete}>Remove Review</button>
        
     </div>

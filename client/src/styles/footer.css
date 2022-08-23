@@ -1,3 +1,20 @@
-.footer-style {
-position: "fixed";
+.footer-style { 
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    /* background-color: rgb(236, 217, 202); */
+    color: white;
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+
 }
+
+.footer-style > a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+    padding-right: 30px;
+  }
