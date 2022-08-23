@@ -16,7 +16,38 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: rgb(215, 226, 218);
     padding: 20px;
     margin: 0 15px;
+    font-family: 'Aboreto',  cursive;
   }
+  .add-review {
+   font-family: 'Aboreto',  cursive;
+    text-align: center;
+  }
+
+  .review-modal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 60px);
+    margin: 0 auto;
+  }
+  
+  .review-modal form label {
+    margin: 25px 0 15px;
+  }
+  
+  .review-modal form input,
+  .review-modal form select {
+    width: 100%;
+    padding: 15px 0px;
+  }
+  
+  button {
+    border: none;
+    padding: 15px 25px;
+    margin: 15px auto;
+  }
+  

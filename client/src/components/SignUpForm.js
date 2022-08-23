@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 
-const SignUpForm = ( {onLogin} ) => {
+const SignUpForm = ( {onLogin, closeModalHandler, setShowLogin} ) => {
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -88,20 +88,6 @@ const SignUpForm = ( {onLogin} ) => {
           value={password_confirmation}
           onChange={(e) => setPassword_Confirmation(e.target.value)}
         />
-         {/* <input
-          placeholder="Your address"
-          type="text"
-          id="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
-        <input
-          placeholder="Your phone number"
-          type="text"
-          id="phone_number"
-          value={phone_number}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        /> */}
 
         <button id="signup-btn" type="submit">
           {isLoading ? "Loading..." : "Sign Up"}
@@ -113,6 +99,10 @@ const SignUpForm = ( {onLogin} ) => {
         </div>
       </form>
       <p>Already have an Account?</p>
+      <button id="sign-log-btn" onClick={() => setShowLogin(true)}>
+            Login!
+          </button>
+          <button onClick={closeModalHandler}>Close</button>
     </div>
   )
 }

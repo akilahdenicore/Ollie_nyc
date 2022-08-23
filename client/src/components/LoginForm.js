@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-const LoginForm = ({onLogin, closeModalHandler}) => { //any function or variable that is inherited from a parent must be noted here **
+const LoginForm = ({onLogin, closeModalHandler, setShowLogin}) => { //any function or variable that is inherited from a parent must be noted here **
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -63,6 +63,11 @@ const LoginForm = ({onLogin, closeModalHandler}) => { //any function or variable
         </div>
       </form>
       <p>Don&apos;t have an Account?</p>
+      <button id="sign-log-btn" onClick={() => setShowLogin(false)}>
+      Sign up!
+      </button>
+      <button onClick={closeModalHandler}>Close</button>
+      
     </div>
   )
 }

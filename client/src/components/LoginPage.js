@@ -13,23 +13,13 @@ const LoginPage = ( {onLogin} ) => {
 
   return (
     <div className="loginSignupModal">
-      <h3>Welcome to Ollie !</h3>
       {showLogin ? (
       <div>
-      <LoginForm onLogin={onLogin} closeModalHandler={closeModalHandler}/>
-      <button id="sign-log-btn" onClick={() => setShowLogin(false)}>
-      Sign up!
-      </button>
+      <LoginForm onLogin={onLogin} closeModalHandler={closeModalHandler} setShowLogin={setShowLogin}/>
       </div>
       ) : (<div>
-        <SignUpForm onLogin={onLogin}/>
-        <p>Already have an account?</p>
-          <button id="sign-log-btn" onClick={() => setShowLogin(true)}>
-            Login!
-          </button>
+        <SignUpForm onLogin={onLogin} closeModalHandler={closeModalHandler} setShowLogin={setShowLogin}/>
       </div>)}
-    
-    <button onClick={closeModalHandler}>Close</button>
     </div>
   )
 }
